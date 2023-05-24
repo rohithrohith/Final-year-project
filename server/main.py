@@ -39,15 +39,15 @@ def home():
 @app.post('/soil-analysis')
 async def soilAnalysis(parameters:SoilAnalysisParameters):
     try:
-        # model = xgb.Booster()
-        # model.load_model('models/soil-analysis/soil.json')
-        # row_to_predict = [[parameters.N,parameters.P,parameters.K,parameters.temperature,parameters.humidity,parameters.ph,parameters.rainfall]]
-        # data = pd.DataFrame(row_to_predict , columns = model.feature_names)
-        # prediction = model.predict(xgb.DMatrix(data))
+        model = xgb.Booster()
+        model.load_model('models/soil-analysis/soil.json')
+        row_to_predict = [[parameters.N,parameters.P,parameters.K,parameters.temperature,parameters.humidity,parameters.ph,parameters.rainfall]]
+        data = pd.DataFrame(row_to_predict , columns = model.feature_names)
+        prediction = model.predict(xgb.DMatrix(data))
         return {
             "success":True,
-            "prediction":"rice"
-            # "prediction":cropsList[np.argmax(prediction[0]).item()]
+            # "prediction":"rice"
+            "prediction":cropsList[np.argmax(prediction[0]).item()]
         }
     except:
         return {
@@ -64,7 +64,7 @@ async def diseaseDetection(
     batch_img = np.expand_dims(imageBytes,0)
 
     try:
-        model = tf.keras.models.load_model('models/'+plant)
+        model = tf.keras.models.load_model('models/'+plant.lower())
         prediction = model.predict(batch_img)
         confidence = np.max(prediction[0])
         predicted_disease=classesOf[plant][np.argmax(prediction[0])]

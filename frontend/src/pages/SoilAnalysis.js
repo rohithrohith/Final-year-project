@@ -23,7 +23,7 @@ const SoilAnalysis = () => {
         if ( K > 200 || N > 200 || P > 200 || P < 0 || N < 0 || K < 0 || ph > 14 || ph < 0 || temperature > 50 || temperature < 0 || humidity > 100 || humidity < 0 ) {
             toast( "Invalid values" )
         } else {
-            const res = await axios.post( 'http://localhost:7000/soil-analysis', { K, P, N, temperature, humidity, ph, rainfall } )
+            const res = await axios.post( 'https://api-smart-agriculture.onrender.com', { K, P, N, temperature, humidity, ph, rainfall } )
             setPrediction( res.data )
         }
     }

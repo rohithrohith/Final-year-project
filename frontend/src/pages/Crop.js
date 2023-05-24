@@ -11,7 +11,7 @@ export default function Crop() {
 
     useEffect( () => {
         const getData = async () => {
-            const res = await axios.get( `http://localhost:7000/crop/${crop}` )
+            const res = await axios.get( `https://api-smart-agriculture.onrender.com/crop/${crop}` )
             if ( res.data.success ) {
                 console.log( res.data.data )
                 setCropInfo( res.data.data )
@@ -35,11 +35,11 @@ export default function Crop() {
                         {cropInfo.climate && cropInfo.climate !== "" && <Box marginTop="10px">
                             <Typography variant='h6' width="fit-content" gutterBottom fontWeight="500" position="relative" sx={{ "&::after": { content: "''", background: "green", height: "2px", "width": "75%", position: "absolute", bottom: "0", left: "0" } }} >Climate conditions</Typography>
                             <Box bgcolor="lightgreen" display="flex" padding="20px" alignItems="center" flexDirection={{ sm: "row", xs: "column" }} gap="20px">
-                                <Box bgcolor="white" padding="20px" justifyContent="center" borderRadius="5px" width="170px" height="170px" display="flex" flexDirection="column" gap="20px" alignItems="center">
+                                <Box bgcolor="white" padding="20px" justifyContent="center" borderRadius="5px" height="170px" display="flex" flexDirection="column" gap="20px" alignItems="center">
                                     <Typography variant='h5' fontWeight="700">{cropInfo.climate.temp}</Typography>
                                     <Typography fontWeight="500">Temperature</Typography>
                                 </Box>
-                                <Box bgcolor="white" padding="20px" justifyContent="center" borderRadius="5px" width="170px" height="170px" display="flex" flexDirection="column" gap="20px" alignItems="center">
+                                <Box bgcolor="white" padding="20px" justifyContent="center" borderRadius="5px" height="170px" display="flex" flexDirection="column" gap="20px" alignItems="center">
                                     <Typography variant='h5' fontWeight="700">{cropInfo.climate.rainfall}</Typography>
                                     <Typography fontWeight="500">Rainfall</Typography>
                                 </Box>

@@ -6,7 +6,7 @@ import axios from 'axios'
 import { ChevronLeft } from '@mui/icons-material'
 import { toast } from 'react-toastify'
 
-const plants = ['Apple', 'Cherry', 'Corn', 'Grape', 'Peach', 'Pepper', 'Potato', 'Strawberry', 'Tomato',]
+const plants = ['Apple', 'Corn', 'Grape', 'Peach', 'Pepper', 'Potato', 'Tomato',]
 
 const DiseaseDetection = () => {
 
@@ -31,7 +31,7 @@ const DiseaseDetection = () => {
         formData.append( 'plant', selectedPlant.toLowerCase() )
         formData.append( 'file', image )
         try {
-            const res = await axios.post( 'http://localhost:7000/disease_detection', formData, {
+            const res = await axios.post( 'https://api-smart-agriculture.onrender.com/disease_detection', formData, {
                 headers: {
                     'Content-Type': ''
                 }

@@ -145,5 +145,6 @@ plant_diseases = {
                   Remove all infected plants and destroy them. Do NOT put them in the compost pile, as the virus may persist in infected plant matter. Burn infected plants or throw them out with the garbage.
                   Monitor the rest of your plants closely, especially those that were located near infected plants.
                   Disinfect gardening tools after every use. Keep a bottle of a weak bleach solution or other antiviral disinfectant to wipe your tools down with."""
- }
+ },
+ 'Healty':{}
 }

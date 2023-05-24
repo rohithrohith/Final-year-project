@@ -12,7 +12,7 @@ def read_image_file_as_array(file) -> np.ndarray:
 classesOf = {
     'apple':['Apple Scab','Apple Black Rot','Cedar Apple Rust','Healty'],
     'pepper':['Bell Bacterial Spot','Healty'],
-    'pototo':['Early Blight','Healty','Late Blight'],
+    'potato':['Early Blight','Healty','Late Blight'],
     'strawberry':['Healty','Scorch Leaf'],
     'tomato':['Bacterial Spot','Early Blight','Healty','Late Blight','Leaf Mold','Septoria Leaf Spot','Spider Mite','Target Spot','Mosaic Virus','Yellow Leaf'],
     'corn':['Cercospora Spot Grey','Common Rust','Healty','Northern Leaf Blight'],

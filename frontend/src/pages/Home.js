@@ -9,7 +9,7 @@ const Home = () => {
 
     useEffect( () => {
         const getData = async () => {
-            const res = await axios.get( 'http://127.0.0.1:7700/' )
+            const res = await axios.get( 'https://api-smart-agriculture.onrender.com' )
             console.log( res.data )
         }
         getData()
