@@ -36,7 +36,7 @@ opt-einsum
 packaging
 pandas
 Pillow
-protobuf
+protobuf==3.20.1
 pyasn1
 pyasn1-modules
 pydantic
